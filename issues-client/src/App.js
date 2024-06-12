@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Container, Row, Col, Button } from 'reactstrap';
 import IssueForm from './IssueForm';
 import IssueList from './IssueList';
+import './App.css';
 
 const App = () => {
   const [issues, setIssues] = useState([]);
@@ -31,11 +33,17 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Issue Tracker</h1>
-      <IssueForm onCreate={createIssue} />
-      <IssueList issues={issues} onUpdate={updateIssue} onDelete={deleteIssue} />
-    </div>
+    <Container>
+      <h1 className="my-4 text-center">Issue Tracker</h1>
+      <Row>
+        <Col md={6}>
+          <IssueForm onCreate={createIssue} />
+        </Col>
+        <Col md={6}>
+          <IssueList issues={issues} onUpdate={updateIssue} onDelete={deleteIssue} />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
