@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import IssueForm from './IssueForm';
 import IssueList from './IssueList';
 import './App.css';
